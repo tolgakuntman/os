@@ -52,7 +52,7 @@ void test_dplist() {
 
     // 5. Test removing elements (you'll need to implement the `dpl_remove_at_index` function)
     // Uncomment the tests below once you implement this function
-    /*
+    
     list = dpl_remove_at_index(list, 1);  // Remove element at index 1 ('A')
     assert(dpl_size(list) == 3);
     assert(dpl_get_element_at_index(list, 1) == 'D');
@@ -67,7 +67,7 @@ void test_dplist() {
     assert(dpl_size(list) == 1);
     assert(dpl_get_element_at_index(list, 0) == 'D');
     printf("Remove at index 1 passed!\n");
-    */
+    
 
     // 6. Test freeing the list
     dpl_free(&list);

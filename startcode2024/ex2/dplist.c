@@ -36,6 +36,7 @@ void dpl_free(dplist_t **list) {
     dplist_node_t *next;
     while(curr!=NULL){
         next=curr->next;
+        free(curr->element);
         free(curr);
         curr=next;
     }
@@ -108,6 +109,7 @@ dplist_t *dpl_remove_at_index(dplist_t *list, int index) {
             ref_at_index->prev->next = NULL;
         }
     }
+    free(ref_at_index->element);
     free(ref_at_index);
     list->size--;
     return list;
