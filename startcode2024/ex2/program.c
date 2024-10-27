@@ -24,6 +24,7 @@ void test_dplist() {
     list = dpl_insert_at_index(list, strdup("Start"), 0); // Should add "Start" to the empty list
     assert(dpl_size(list) == 1);
     assert(strcmp(dpl_get_element_at_index(list, 0), "Start") == 0);
+    assert(dpl_get_index_of_element(list,dpl_get_element_at_index(list, 0))==0);
     printf("Insert at start of list passed!\n");
 
     // Insert at the end of the list (Case 3)

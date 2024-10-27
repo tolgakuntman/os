@@ -59,34 +59,28 @@ dplist_t *dpl_insert_at_index(dplist_t *list, element_t element, int index) {
     list_node = malloc(sizeof(dplist_node_t));
 
     list_node->element = element;
-    // pointer drawing breakpoint
     if (list->head == NULL) { // covers case 1
         list_node->prev = NULL;
         list_node->next = NULL;
         list->head = list_node;
-        // pointer drawing breakpoint
     } else if (index <= 0) { // covers case 2
         list_node->prev = NULL;
         list_node->next = list->head;
         list->head->prev = list_node;
         list->head = list_node;
-        // pointer drawing breakpoint
     } else {
         ref_at_index = dpl_get_reference_at_index(list, index);
         assert(ref_at_index != NULL);
-        // pointer drawing breakpoint
         if (index < dpl_size(list)) { // covers case 4
             list_node->prev = ref_at_index->prev;
             list_node->next = ref_at_index;
             ref_at_index->prev->next = list_node;
             ref_at_index->prev = list_node;
-            // pointer drawing breakpoint
         } else { // covers case 3
             assert(ref_at_index->next == NULL);
             list_node->next = NULL;
             list_node->prev = ref_at_index;
             ref_at_index->next = list_node;
-            // pointer drawing breakpoint
         }
     }
     list->size++;
@@ -140,8 +134,13 @@ element_t dpl_get_element_at_index(dplist_t *list, int index) {
 }
 
 int dpl_get_index_of_element(dplist_t *list, element_t element) {
-
-    //TODO: add your code here
+    int count=0;
+    dplist_node_t *dummy = list->head;
+     while (dummy->next != NULL&&dummy->element!=element) {
+        count++;
+        dummy = dummy->next;
+    }
+    return count;
     return -1;
 }
 

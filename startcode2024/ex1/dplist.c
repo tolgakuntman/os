@@ -40,6 +40,7 @@ void dpl_free(dplist_t **list) {
         curr=next;
     }
     free(*list);
+    free(list);
 }
 
 /* Important note: to implement any list manipulation operator (insert, append, delete, sort, ...), always be aware of the following cases:
@@ -138,9 +139,13 @@ element_t dpl_get_element_at_index(dplist_t *list, int index) {
 }
 
 int dpl_get_index_of_element(dplist_t *list, element_t element) {
-
-    //TODO: add your code here
-    return -1;
+    int count=0;
+    dplist_node_t *dummy = list->head;
+    while (dummy->next != NULL&&dummy->element!=element) {
+        count++;
+        dummy = dummy->next;
+    }
+    return count;
 }
 
 
