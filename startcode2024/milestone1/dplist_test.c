@@ -120,8 +120,8 @@ void second_test() {
     ck_assert_msg(dpl_get_element_at_reference(list, NULL) == NULL, "Failure: Expected NULL for NULL reference.");
 
     // 4. Test with a valid reference
-    dplist_node_t *head_ref = dpl_get_reference_at_index(list, 0);
-    ck_assert_msg(((my_element_t*)dpl_get_element_at_reference(list, head_ref))->id == elem1.id, "Failure: Head reference does not match.");
+    dplist_node_t *head_ref = dpl_get_reference_at_index(list, 10);
+    ck_assert_msg(((my_element_t*)dpl_get_element_at_reference(list, head_ref))->id == elem2.id, "Failure: Head reference does not match.");
 
     // 5. Test with a reference that does not belong to the list
     dplist_t *other_list = dpl_create(element_copy, element_free, element_compare);
