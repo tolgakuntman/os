@@ -34,7 +34,7 @@ int main(void) {
     list = dpl_insert_at_index(list, &x, 0, true);
 
     x.id = 3;
-    list = dpl_insert_at_index(list, &x, 1, true);
+    list = dpl_insert_at_index(list, &x, 99, true);
 
     x.id = 7;
     list = dpl_insert_at_index(list, &x, 5, true);

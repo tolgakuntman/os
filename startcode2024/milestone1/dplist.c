@@ -153,8 +153,16 @@ dplist_t *dpl_remove_at_index(dplist_t *list, int index, bool free_element) {
 
 
 int dpl_size(dplist_t *list) {
-    return list->size;
-
+    // return list->size;
+    if(list==NULL) return -1;
+    if(list->head==NULL) return 0;
+    int count=0;
+    dplist_node_t *dummy = list->head;
+    while (dummy != NULL) {
+        count++;
+        dummy = dummy->next;
+    }
+    return count;
 }
 
 void *dpl_get_element_at_index(dplist_t *list, int index) {
@@ -166,18 +174,26 @@ void *dpl_get_element_at_index(dplist_t *list, int index) {
         count++;
         dummy=dummy->next;
     }
-    return dummy->element;
+    return (dummy != NULL) ? dummy->element : NULL;
 
 }
 
 int dpl_get_index_of_element(dplist_t *list, void *element) {
-    int count=0;
-    dplist_node_t *dummy = list->head;
-    while (dummy->next != NULL&&dummy->element!=element) {
-        count++;
-        dummy = dummy->next;
+    
+    if(list==NULL||list->head==NULL){
+      return -1;
     }
-    return count;
+    dplist_node_t *current= list->head;
+    int index=0;
+    while(current!=NULL){
+      if (list->element_compare(element, current->element) == 0) {
+            return index;
+      }
+      index++;
+      current=current->next;
+    }
+    return -1;
+
 }
 
 dplist_node_t *dpl_get_reference_at_index(dplist_t *list, int index) {
@@ -192,12 +208,20 @@ dplist_node_t *dpl_get_reference_at_index(dplist_t *list, int index) {
 }
 
 void *dpl_get_element_at_reference(dplist_t *list, dplist_node_t *reference) {
+    if (list == NULL || list->head == NULL || reference == NULL) {
+        return NULL;
+    }
+
     dplist_node_t *dummy = list->head;
-    if(list==NULL||list->head==NULL) return NULL;
-    while (dummy->next != NULL&&(list->element_compare(reference->element,dummy->element)!=0)) {
+    while (dummy != NULL) {
+        if (dummy == reference) {
+            return dummy->element;
+        }
         dummy = dummy->next;
     }
-    return dummy->element;
+
+    return NULL;
 }
+
 
 
