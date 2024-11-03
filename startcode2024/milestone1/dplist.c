@@ -25,7 +25,6 @@ struct dplist {
     void (*element_free)(void **element);
 
     int (*element_compare)(void *x, void *y);
-    int size;
 };
 
 
@@ -40,7 +39,6 @@ dplist_t *dpl_create(// callback functions
     list->element_copy = element_copy;
     list->element_free = element_free;
     list->element_compare = element_compare;
-    list->size=0;
     return list;
 }
 
