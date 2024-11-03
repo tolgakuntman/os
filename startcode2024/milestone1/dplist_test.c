@@ -72,14 +72,14 @@ void yourtest1() {
     my_element_t elem4 = {4, "Element4"};
     list = dpl_insert_at_index(list, &elem4, 10, true);
     ck_assert_msg(dpl_size(list) == 4, "Failure: Expected list size to be 4 after out-of-bound insertion.");
-    ck_assert_msg(((my_element_t*)dpl_get_element_at_index(list, 3))->id == 4, "Failure: Expected element ID to be 4 at index 3 after out-of-bound insertion.");
+    ck_assert_msg(((my_element_t*)dpl_get_element_at_index(list, 10))->id == 4, "Failure: Expected element ID to be 4 at index 3 after out-of-bound insertion.");
     ck_assert_msg(dpl_get_index_of_element(list, &elem4) == 3, "Failure: Expected index 3 for out-of-bound inserted element.");
 
     // Test removal at head and check index of removed element
     list = dpl_remove_at_index(list, 0, true);
     ck_assert_msg(dpl_size(list) == 3, "Failure: Expected list size to be 3 after removing head.");
     ck_assert_msg(dpl_get_index_of_element(list, &elem1) == -1, "Failure: Expected -1 for removed element.");
-    ck_assert_msg(((my_element_t*)dpl_get_element_at_index(list, 0))->id == 3, "Failure: Expected element ID to be 3 at new head.");
+    ck_assert_msg(((my_element_t*)dpl_get_element_at_index(list, -100))->id == 3, "Failure: Expected element ID to be 3 at new head.");
 
     // Test index retrieval for non-existing element
     my_element_t elem5 = {5, "Nonexistent"};
