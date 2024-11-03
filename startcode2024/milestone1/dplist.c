@@ -105,7 +105,7 @@ dplist_t *dpl_insert_at_index(dplist_t *list, void *element, int index, bool ins
             ref_at_index->next = list_node;
         }
     }
-    list->size++;
+    //list->size++;
     return list;
 
 }
@@ -146,7 +146,7 @@ dplist_t *dpl_remove_at_index(dplist_t *list, int index, bool free_element) {
 
     // Free the node itself
     free(ref_at_index);
-    list->size--;
+    //list->size--;
 
     return list;
 }
