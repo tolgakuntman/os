@@ -1,0 +1,32 @@
+// Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    {
+        "version": "0.2.0",
+        "configurations": [
+
+            
+            {
+                "name": "(gdb) Launch milestone2",  // Name for your debug configuration
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "/home/parallels/Desktop/os_ex/startcodeplab1/main.out",  // Full path to your executable
+                "args": [],  // Arguments if your program takes any
+                "stopAtEntry": true,
+                "cwd": "/home/parallels/Desktop/os_ex/startcodeplab1",  // Current working directory
+                "environment": [],
+                "externalConsole": false,  // If you want to use an external terminal for input/output
+                "MIMode": "gdb",  // Use gdb as the debugger
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ],
+                "miDebuggerPath": "/usr/bin/gdb",  // Path to GDB installed via Homebrew or system
+                "preLaunchTask": "build",  // Build before debugging
+                "internalConsoleOptions": "openOnSessionStart"
+            }
+        ]
+    }
