@@ -15,7 +15,7 @@ int main(){
     if(data == NULL) return -1;
 
     datamgr_parse_sensor_files(map, data);
-
+    
     datamgr_free();
 
     fclose(map);
