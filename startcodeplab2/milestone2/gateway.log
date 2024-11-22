@@ -22,3 +22,9 @@
 3 - Mon Nov 18 11:33:22 2024 - Data insertion succeeded.
 4 - Mon Nov 18 11:33:27 2024 - Data insertion succeeded.
 5 - Mon Nov 18 11:33:27 2024 - DB file normally closed.
+0 - Fri Nov 22 22:35:59 2024 - A new csv file is created or an existing file has been opened.
+1 - Fri Nov 22 22:36:00 2024 - Data insertion succeeded.
+2 - Fri Nov 22 22:36:00 2024 - Data insertion succeeded.
+3 - Fri Nov 22 22:36:00 2024 - Data insertion succeeded.
+4 - Fri Nov 22 22:36:05 2024 - Data insertion succeeded.
+5 - Fri Nov 22 22:36:05 2024 - DB file normally closed.
