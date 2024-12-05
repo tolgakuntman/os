@@ -50,11 +50,11 @@ void *reader(void *args){
 }
 
 int main(){
-    struct timespec ts, te;
-    clock_gettime(CLOCK_MONOTONIC, &ts);
+    // struct timespec ts, te;
+    // clock_gettime(CLOCK_MONOTONIC, &ts);
 
     pthread_t writer_thread;
-    pthread_t reader_thread1, reader_thread2,reader_thread3,reader_thread4;
+    pthread_t reader_thread1, reader_thread2;
     sbuffer_t *buf;
     sbuffer_init(&buf);
     printf("buffer initialized correctly\n");
@@ -70,8 +70,8 @@ int main(){
 
     sbuffer_free(&buf);
     printf("buffer freed correctly\n");
-    clock_gettime(CLOCK_MONOTONIC, &te);
+    // clock_gettime(CLOCK_MONOTONIC, &te);
 
-    printf("Execution time: %lf seconds\n", ((double)te.tv_sec + 1.0e-9*te.tv_nsec) -
-                  ((double)ts.tv_sec + 1.0e-9*ts.tv_nsec));
+    // printf("Execution time: %lf seconds\n", ((double)te.tv_sec + 1.0e-9*te.tv_nsec) -
+    //               ((double)ts.tv_sec + 1.0e-9*ts.tv_nsec));
 }
