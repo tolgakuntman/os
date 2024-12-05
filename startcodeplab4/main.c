@@ -15,6 +15,10 @@ void *writer(void *args){
     sbuffer_t *buffer=args;     //assuming that the buffer is initialized before the thread
     
     FILE * data = fopen("sensor_data", "rb");   //open the file
+    if (!data) {
+        printf("Failed to open sensor_data");
+        return NULL;
+    }
     printf("file opened\n");
     sensor_data_t *sensor_data=malloc(sizeof(sensor_data_t));
     while (fread(&sensor_data->id, sizeof(sensor_id_t), 1, data) == 1 &&    //check if there's data to read
@@ -35,6 +39,10 @@ void *reader(void *args){
     sbuffer_t *buffer=args; 
     sensor_data_t *sensor_data=malloc(sizeof(sensor_data_t));
     FILE *file_csv= fopen("sensor_data_out.csv", "a");
+    if (!file_csv) {
+        printf("Failed to open sensor_data_out.csv");
+        return NULL;
+    }
     while (sbuffer_remove(buffer,sensor_data)!=SBUFFER_NO_DATA)
     {
         pthread_mutex_lock(&csv_lock);
@@ -50,9 +58,6 @@ void *reader(void *args){
 }
 
 int main(){
-    // struct timespec ts, te;
-    // clock_gettime(CLOCK_MONOTONIC, &ts);
-
     pthread_t writer_thread;
     pthread_t reader_thread1, reader_thread2;
     sbuffer_t *buf;
@@ -63,15 +68,13 @@ int main(){
     pthread_create( &writer_thread, NULL, &writer, buf);
     pthread_create( &reader_thread1, NULL, &reader, buf);
     pthread_create( &reader_thread2, NULL, &reader, buf);
+
     pthread_join(writer_thread, NULL);
     pthread_join(reader_thread1, NULL);
     pthread_join(reader_thread2, NULL);
+
     pthread_mutex_destroy(&csv_lock);
 
     sbuffer_free(&buf);
     printf("buffer freed correctly\n");
-    // clock_gettime(CLOCK_MONOTONIC, &te);
-
-    // printf("Execution time: %lf seconds\n", ((double)te.tv_sec + 1.0e-9*te.tv_nsec) -
-    //               ((double)ts.tv_sec + 1.0e-9*ts.tv_nsec));
 }

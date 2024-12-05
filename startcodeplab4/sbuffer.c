@@ -31,8 +31,8 @@ int sbuffer_init(sbuffer_t **buffer) {
     if (*buffer == NULL) return SBUFFER_FAILURE;
     (*buffer)->head = NULL;
     (*buffer)->tail = NULL;
-    pthread_mutex_init(&buffer_lock,NULL);
-    pthread_cond_init(&data_available,NULL);
+    if (pthread_mutex_init(&buffer_lock, NULL) != 0) return SBUFFER_FAILURE;
+    if (pthread_cond_init(&data_available, NULL) != 0) return SBUFFER_FAILURE;
     return SBUFFER_SUCCESS;
 }
 
