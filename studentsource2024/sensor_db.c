@@ -5,7 +5,7 @@ bool is_file_open=false;
 FILE * open_db(char * filename, bool append){
     const char *mode = append ? "a" : "w+";
     FILE *file= fopen(filename, mode);
-    if(file==NULL||create_log_process()==-1){
+    if(file==NULL){
         printf("I/O Error: failed to open DB file.\n");
         write_to_log_process("DB file failed to open.");
         return NULL;
@@ -45,6 +45,5 @@ int close_db(FILE * f){
     }else{
         write_to_log_process("DB file normally closed.");
     }
-    int log_resp  = end_log_process();
-    return resp < 0 || log_resp == -1 ? -1 : 0;
+    return resp < 0 ? -1 : 0;
 }

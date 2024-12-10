@@ -1,28 +1,239 @@
-0 - Tue Dec 10 00:12:13 2024 - Listening for clients.
-1 - Tue Dec 10 00:12:13 2024 - A new csv file is created or an existing file has been opened.
-2 - Tue Dec 10 00:12:15 2024 - Sensor node 1 has opened a new connection.
-3 - Tue Dec 10 00:12:15 2024 - Sensor node 1 with value: 19.800377 is inserted correctly to the buffer.
-4 - Tue Dec 10 00:12:15 2024 - Data insertion from sensor with id 1 succeeded
-5 - Tue Dec 10 00:12:17 2024 - Sensor node 1 with value: 19.845722 is inserted correctly to the buffer.
-6 - Tue Dec 10 00:12:17 2024 - Data insertion from sensor with id 1 succeeded
-7 - Tue Dec 10 00:12:18 2024 - Sensor node 2 has opened a new connection.
-8 - Tue Dec 10 00:12:18 2024 - Sensor node 2 with value: 20.106580 is inserted correctly to the buffer.
-9 - Tue Dec 10 00:12:18 2024 - Data insertion from sensor with id 2 succeeded
-10 - Tue Dec 10 00:12:19 2024 - Sensor node 1 with value: 19.694317 is inserted correctly to the buffer.
-11 - Tue Dec 10 00:12:19 2024 - Data insertion from sensor with id 1 succeeded
-12 - Tue Dec 10 00:12:21 2024 - Sensor node 3 has opened a new connection.
-13 - Tue Dec 10 00:12:21 2024 - Sensor node 3 with value: 19.912784 is inserted correctly to the buffer.
-14 - Tue Dec 10 00:12:21 2024 - Max number of clients joined, waiting for them to disconnect
-15 - Tue Dec 10 00:12:21 2024 - Data insertion from sensor with id 3 succeeded
-16 - Tue Dec 10 00:12:21 2024 - Sensor node 1 with value: 19.827604 is inserted correctly to the buffer.
-17 - Tue Dec 10 00:12:21 2024 - Data insertion from sensor with id 1 succeeded
-18 - Tue Dec 10 00:12:22 2024 - Sensor node 3 has closed the connection.
-19 - Tue Dec 10 00:12:23 2024 - Sensor node 2 with value: 20.208811 is inserted correctly to the buffer.
-20 - Tue Dec 10 00:12:23 2024 - Data insertion from sensor with id 2 succeeded
-21 - Tue Dec 10 00:12:23 2024 - Sensor node 1 with value: 19.859741 is inserted correctly to the buffer.
-22 - Tue Dec 10 00:12:23 2024 - Data insertion from sensor with id 1 succeeded
-23 - Tue Dec 10 00:12:25 2024 - Sensor node 2 has closed the connection.
-24 - Tue Dec 10 00:12:25 2024 - Sensor node 1 with value: 20.074407 is inserted correctly to the buffer.
-25 - Tue Dec 10 00:12:25 2024 - Data insertion from sensor with id 1 succeeded
-26 - Tue Dec 10 00:12:27 2024 - Sensor node 1 has closed the connection.
-27 - Tue Dec 10 00:12:27 2024 - DB file normally closed.
+0 - Tue Dec 10 23:50:04 2024 - A new csv file is created or an existing file has been opened.
+1 - Tue Dec 10 23:50:04 2024 - Listening for clients.
+2 - Tue Dec 10 23:50:07 2024 - Sensor node 15 has opened a new connection.
+3 - Tue Dec 10 23:50:07 2024 - Sensor node 15 with value: 20.247378 is inserted correctly to the buffer.
+4 - Tue Dec 10 23:50:07 2024 - Data insertion from sensor with id 15 succeeded
+5 - Tue Dec 10 23:50:09 2024 - Sensor node 15 with value: 20.252710 is inserted correctly to the buffer.
+6 - Tue Dec 10 23:50:11 2024 - Sensor node 15 with value: 20.121754 is inserted correctly to the buffer.
+7 - Tue Dec 10 23:50:11 2024 - Data insertion from sensor with id 15 succeeded
+8 - Tue Dec 10 23:50:11 2024 - Data insertion from sensor with id 15 succeeded
+9 - Tue Dec 10 23:50:13 2024 - Sensor node 15 with value: 20.147922 is inserted correctly to the buffer.
+10 - Tue Dec 10 23:50:15 2024 - Sensor node 15 with value: 20.155364 is inserted correctly to the buffer.
+11 - Tue Dec 10 23:50:15 2024 - Data insertion from sensor with id 15 succeeded
+12 - Tue Dec 10 23:50:15 2024 - Data insertion from sensor with id 15 succeeded
+13 - Tue Dec 10 23:50:17 2024 - Sensor node 15 with value: 20.270142 is inserted correctly to the buffer.
+14 - Tue Dec 10 23:50:17 2024 - Log error: Room 1 is too hot with average temperature 20.185026°C measured by sensor 15
+15 - Tue Dec 10 23:50:17 2024 - Log error: Room 1 is too hot with average temperature 20.189578°C measured by sensor 15
+16 - Tue Dec 10 23:50:19 2024 - Sensor node 15 with value: 20.289499 is inserted correctly to the buffer.
+17 - Tue Dec 10 23:50:19 2024 - Data insertion from sensor with id 15 succeeded
+18 - Tue Dec 10 23:50:19 2024 - Data insertion from sensor with id 15 succeeded
+19 - Tue Dec 10 23:50:21 2024 - Sensor node 15 with value: 20.110923 is inserted correctly to the buffer.
+20 - Tue Dec 10 23:50:21 2024 - Log error: Room 1 is too hot with average temperature 20.196936°C measured by sensor 15
+21 - Tue Dec 10 23:50:21 2024 - Log error: Room 1 is too hot with average temperature 20.194770°C measured by sensor 15
+22 - Tue Dec 10 23:50:23 2024 - Sensor node 15 with value: 19.984619 is inserted correctly to the buffer.
+23 - Tue Dec 10 23:50:23 2024 - Data insertion from sensor with id 15 succeeded
+24 - Tue Dec 10 23:50:23 2024 - Data insertion from sensor with id 15 succeeded
+25 - Tue Dec 10 23:50:25 2024 - Sensor node 15 with value: 20.187695 is inserted correctly to the buffer.
+26 - Tue Dec 10 23:50:25 2024 - Log error: Room 1 is too hot with average temperature 20.162109°C measured by sensor 15
+27 - Tue Dec 10 23:50:25 2024 - Log error: Room 1 is too hot with average temperature 20.168575°C measured by sensor 15
+28 - Tue Dec 10 23:50:27 2024 - Sensor node 15 with value: 20.404085 is inserted correctly to the buffer.
+29 - Tue Dec 10 23:50:27 2024 - Data insertion from sensor with id 15 succeeded
+30 - Tue Dec 10 23:50:27 2024 - Data insertion from sensor with id 15 succeeded
+31 - Tue Dec 10 23:50:29 2024 - Sensor node 15 with value: 20.290597 is inserted correctly to the buffer.
+32 - Tue Dec 10 23:50:29 2024 - Log error: Room 1 is too hot with average temperature 20.195364°C measured by sensor 15
+33 - Tue Dec 10 23:50:29 2024 - Log error: Room 1 is too hot with average temperature 20.195584°C measured by sensor 15
+34 - Tue Dec 10 23:50:31 2024 - Sensor node 15 with value: 20.308149 is inserted correctly to the buffer.
+35 - Tue Dec 10 23:50:31 2024 - Data insertion from sensor with id 15 succeeded
+36 - Tue Dec 10 23:50:31 2024 - Data insertion from sensor with id 15 succeeded
+37 - Tue Dec 10 23:50:33 2024 - Sensor node 15 with value: 20.318042 is inserted correctly to the buffer.
+38 - Tue Dec 10 23:50:33 2024 - Log error: Room 1 is too hot with average temperature 20.235029°C measured by sensor 15
+39 - Tue Dec 10 23:50:33 2024 - Log error: Room 1 is too hot with average temperature 20.301714°C measured by sensor 15
+40 - Tue Dec 10 23:50:35 2024 - Sensor node 15 with value: 20.313013 is inserted correctly to the buffer.
+41 - Tue Dec 10 23:50:35 2024 - Data insertion from sensor with id 15 succeeded
+42 - Tue Dec 10 23:50:35 2024 - Data insertion from sensor with id 15 succeeded
+43 - Tue Dec 10 23:50:37 2024 - Sensor node 15 with value: 20.504397 is inserted correctly to the buffer.
+44 - Tue Dec 10 23:50:37 2024 - Log error: Room 1 is too hot with average temperature 20.326777°C measured by sensor 15
+45 - Tue Dec 10 23:50:37 2024 - Log error: Room 1 is too hot with average temperature 20.346840°C measured by sensor 15
+46 - Tue Dec 10 23:50:39 2024 - Sensor node 15 with value: 20.648153 is inserted correctly to the buffer.
+47 - Tue Dec 10 23:50:39 2024 - Data insertion from sensor with id 15 succeeded
+48 - Tue Dec 10 23:50:39 2024 - Data insertion from sensor with id 15 succeeded
+49 - Tue Dec 10 23:50:41 2024 - Sensor node 15 with value: 20.433169 is inserted correctly to the buffer.
+50 - Tue Dec 10 23:50:41 2024 - Log error: Room 1 is too hot with average temperature 20.418351°C measured by sensor 15
+51 - Tue Dec 10 23:50:41 2024 - Log error: Room 1 is too hot with average temperature 20.443355°C measured by sensor 15
+52 - Tue Dec 10 23:50:43 2024 - Sensor node 15 with value: 20.590831 is inserted correctly to the buffer.
+53 - Tue Dec 10 23:50:43 2024 - Data insertion from sensor with id 15 succeeded
+54 - Tue Dec 10 23:50:43 2024 - Data insertion from sensor with id 15 succeeded
+55 - Tue Dec 10 23:50:45 2024 - Sensor node 15 with value: 20.791302 is inserted correctly to the buffer.
+56 - Tue Dec 10 23:50:45 2024 - Log error: Room 1 is too hot with average temperature 20.497913°C measured by sensor 15
+57 - Tue Dec 10 23:50:45 2024 - Log error: Room 1 is too hot with average temperature 20.593570°C measured by sensor 15
+58 - Tue Dec 10 23:50:47 2024 - Sensor node 15 with value: 21.009242 is inserted correctly to the buffer.
+59 - Tue Dec 10 23:50:47 2024 - Data insertion from sensor with id 15 succeeded
+60 - Tue Dec 10 23:50:47 2024 - Data insertion from sensor with id 15 succeeded
+61 - Tue Dec 10 23:50:49 2024 - Sensor node 15 with value: 20.922884 is inserted correctly to the buffer.
+62 - Tue Dec 10 23:50:49 2024 - Log error: Room 1 is too hot with average temperature 20.694539°C measured by sensor 15
+63 - Tue Dec 10 23:50:49 2024 - Log error: Room 1 is too hot with average temperature 20.749486°C measured by sensor 15
+64 - Tue Dec 10 23:50:51 2024 - Sensor node 15 with value: 20.979342 is inserted correctly to the buffer.
+65 - Tue Dec 10 23:50:51 2024 - Data insertion from sensor with id 15 succeeded
+66 - Tue Dec 10 23:50:51 2024 - Data insertion from sensor with id 15 succeeded
+67 - Tue Dec 10 23:50:53 2024 - Sensor node 15 with value: 20.812822 is inserted correctly to the buffer.
+68 - Tue Dec 10 23:50:53 2024 - Log error: Room 1 is too hot with average temperature 20.858720°C measured by sensor 15
+69 - Tue Dec 10 23:50:53 2024 - Log error: Room 1 is too hot with average temperature 20.903119°C measured by sensor 15
+70 - Tue Dec 10 23:50:55 2024 - Sensor node 21 has opened a new connection.
+71 - Tue Dec 10 23:50:55 2024 - Sensor node 21 with value: 20.146634 is inserted correctly to the buffer.
+72 - Tue Dec 10 23:50:55 2024 - Data insertion from sensor with id 15 succeeded
+73 - Tue Dec 10 23:50:55 2024 - Data insertion from sensor with id 21 succeeded
+74 - Tue Dec 10 23:50:55 2024 - Sensor node 15 with value: 20.631277 is inserted correctly to the buffer.
+75 - Tue Dec 10 23:50:55 2024 - Log error: Room 1 is too hot with average temperature 20.871113°C measured by sensor 15
+76 - Tue Dec 10 23:50:57 2024 - Sensor node 15 with value: 20.439516 is inserted correctly to the buffer.
+77 - Tue Dec 10 23:50:57 2024 - Data insertion from sensor with id 15 succeeded
+78 - Tue Dec 10 23:50:57 2024 - Data insertion from sensor with id 15 succeeded
+79 - Tue Dec 10 23:50:59 2024 - Sensor node 15 with value: 20.499200 is inserted correctly to the buffer.
+80 - Tue Dec 10 23:50:59 2024 - Log error: Room 1 is too hot with average temperature 20.757168°C measured by sensor 15
+81 - Tue Dec 10 23:50:59 2024 - Log error: Room 1 is too hot with average temperature 20.672431°C measured by sensor 15
+82 - Tue Dec 10 23:51:00 2024 - Sensor node 21 with value: 20.062137 is inserted correctly to the buffer.
+83 - Tue Dec 10 23:51:00 2024 - Data insertion from sensor with id 15 succeeded
+84 - Tue Dec 10 23:51:00 2024 - Data insertion from sensor with id 21 succeeded
+85 - Tue Dec 10 23:51:01 2024 - Sensor node 15 with value: 20.638250 is inserted correctly to the buffer.
+86 - Tue Dec 10 23:51:01 2024 - Log error: Room 1 is too hot with average temperature 20.604213°C measured by sensor 15
+87 - Tue Dec 10 23:51:03 2024 - Sensor node 15 with value: 20.568476 is inserted correctly to the buffer.
+88 - Tue Dec 10 23:51:03 2024 - Data insertion from sensor with id 15 succeeded
+89 - Tue Dec 10 23:51:03 2024 - Data insertion from sensor with id 15 succeeded
+90 - Tue Dec 10 23:51:05 2024 - Sensor node 21 with value: 20.153874 is inserted correctly to the buffer.
+91 - Tue Dec 10 23:51:05 2024 - Log error: Room 1 is too hot with average temperature 20.555344°C measured by sensor 15
+92 - Tue Dec 10 23:51:05 2024 - Sensor node 15 with value: 20.811536 is inserted correctly to the buffer.
+93 - Tue Dec 10 23:51:05 2024 - Data insertion from sensor with id 21 succeeded
+94 - Tue Dec 10 23:51:05 2024 - Data insertion from sensor with id 15 succeeded
+95 - Tue Dec 10 23:51:07 2024 - Sensor node 15 with value: 20.578559 is inserted correctly to the buffer.
+96 - Tue Dec 10 23:51:07 2024 - Log error: Room 1 is too hot with average temperature 20.591396°C measured by sensor 15
+97 - Tue Dec 10 23:51:07 2024 - Log error: Room 1 is too hot with average temperature 20.619204°C measured by sensor 15
+98 - Tue Dec 10 23:51:09 2024 - Sensor node 15 with value: 20.760136 is inserted correctly to the buffer.
+99 - Tue Dec 10 23:51:09 2024 - Data insertion from sensor with id 15 succeeded
+100 - Tue Dec 10 23:51:09 2024 - Data insertion from sensor with id 15 succeeded
+101 - Tue Dec 10 23:51:10 2024 - Sensor node 21 with value: 20.352541 is inserted correctly to the buffer.
+102 - Tue Dec 10 23:51:10 2024 - Log error: Room 1 is too hot with average temperature 20.671392°C measured by sensor 15
+103 - Tue Dec 10 23:51:11 2024 - Sensor node 15 with value: 20.824860 is inserted correctly to the buffer.
+104 - Tue Dec 10 23:51:11 2024 - Data insertion from sensor with id 21 succeeded
+105 - Tue Dec 10 23:51:11 2024 - Data insertion from sensor with id 15 succeeded
+106 - Tue Dec 10 23:51:13 2024 - Sensor node 15 with value: 21.032487 is inserted correctly to the buffer.
+107 - Tue Dec 10 23:51:13 2024 - Log error: Room 1 is too hot with average temperature 20.708713°C measured by sensor 15
+108 - Tue Dec 10 23:51:13 2024 - Log error: Room 1 is too hot with average temperature 20.801516°C measured by sensor 15
+109 - Tue Dec 10 23:51:15 2024 - Sensor node 21 with value: 20.576445 is inserted correctly to the buffer.
+110 - Tue Dec 10 23:51:15 2024 - Data insertion from sensor with id 15 succeeded
+111 - Tue Dec 10 23:51:15 2024 - Data insertion from sensor with id 21 succeeded
+112 - Tue Dec 10 23:51:15 2024 - Sensor node 15 with value: 20.822106 is inserted correctly to the buffer.
+113 - Tue Dec 10 23:51:15 2024 - Log error: Room 2 is too hot with average temperature 20.258326°C measured by sensor 21
+114 - Tue Dec 10 23:51:15 2024 - Log error: Room 1 is too hot with average temperature 20.803630°C measured by sensor 15
+115 - Tue Dec 10 23:51:17 2024 - Sensor node 15 with value: 20.603078 is inserted correctly to the buffer.
+116 - Tue Dec 10 23:51:17 2024 - Data insertion from sensor with id 15 succeeded
+117 - Tue Dec 10 23:51:17 2024 - Data insertion from sensor with id 15 succeeded
+118 - Tue Dec 10 23:51:19 2024 - Sensor node 15 with value: 20.826082 is inserted correctly to the buffer.
+119 - Tue Dec 10 23:51:19 2024 - Log error: Room 1 is too hot with average temperature 20.808533°C measured by sensor 15
+120 - Tue Dec 10 23:51:19 2024 - Log error: Room 1 is too hot with average temperature 20.821723°C measured by sensor 15
+121 - Tue Dec 10 23:51:20 2024 - Sensor node 21 with value: 20.374446 is inserted correctly to the buffer.
+122 - Tue Dec 10 23:51:20 2024 - Data insertion from sensor with id 15 succeeded
+123 - Tue Dec 10 23:51:20 2024 - Data insertion from sensor with id 21 succeeded
+124 - Tue Dec 10 23:51:21 2024 - Sensor node 15 with value: 20.821113 is inserted correctly to the buffer.
+125 - Tue Dec 10 23:51:21 2024 - Log error: Room 2 is too hot with average temperature 20.303889°C measured by sensor 21
+126 - Tue Dec 10 23:51:21 2024 - Log error: Room 1 is too hot with average temperature 20.820973°C measured by sensor 15
+127 - Tue Dec 10 23:51:23 2024 - Sensor node 15 with value: 20.866781 is inserted correctly to the buffer.
+128 - Tue Dec 10 23:51:23 2024 - Data insertion from sensor with id 15 succeeded
+129 - Tue Dec 10 23:51:23 2024 - Data insertion from sensor with id 15 succeeded
+130 - Tue Dec 10 23:51:23 2024 - Max number of clients joined, waiting for them to disconnect
+131 - Tue Dec 10 23:51:23 2024 - Sensor node 37 has opened a new connection.
+132 - Tue Dec 10 23:51:23 2024 - Sensor node 37 with value: 19.837866 is inserted correctly to the buffer.
+133 - Tue Dec 10 23:51:23 2024 - Log error: Room 1 is too hot with average temperature 20.787832°C measured by sensor 15
+134 - Tue Dec 10 23:51:25 2024 - Sensor node 21 with value: 20.283292 is inserted correctly to the buffer.
+135 - Tue Dec 10 23:51:25 2024 - Data insertion from sensor with id 37 succeeded
+136 - Tue Dec 10 23:51:25 2024 - Data insertion from sensor with id 21 succeeded
+137 - Tue Dec 10 23:51:25 2024 - Sensor node 15 with value: 20.954742 is inserted correctly to the buffer.
+138 - Tue Dec 10 23:51:25 2024 - Log error: Room 2 is too hot with average temperature 20.348120°C measured by sensor 21
+139 - Tue Dec 10 23:51:25 2024 - Log error: Room 1 is too hot with average temperature 20.814359°C measured by sensor 15
+140 - Tue Dec 10 23:51:27 2024 - Sensor node 15 with value: 21.148841 is inserted correctly to the buffer.
+141 - Tue Dec 10 23:51:27 2024 - Data insertion from sensor with id 15 succeeded
+142 - Tue Dec 10 23:51:27 2024 - Data insertion from sensor with id 15 succeeded
+143 - Tue Dec 10 23:51:29 2024 - Sensor node 15 with value: 21.089354 is inserted correctly to the buffer.
+144 - Tue Dec 10 23:51:29 2024 - Log error: Room 1 is too hot with average temperature 20.923512°C measured by sensor 15
+145 - Tue Dec 10 23:51:29 2024 - Log error: Room 1 is too hot with average temperature 20.976166°C measured by sensor 15
+146 - Tue Dec 10 23:51:30 2024 - Sensor node 21 with value: 20.524743 is inserted correctly to the buffer.
+147 - Tue Dec 10 23:51:30 2024 - Data insertion from sensor with id 15 succeeded
+148 - Tue Dec 10 23:51:30 2024 - Data insertion from sensor with id 21 succeeded
+149 - Tue Dec 10 23:51:31 2024 - Sensor node 15 with value: 20.841169 is inserted correctly to the buffer.
+150 - Tue Dec 10 23:51:31 2024 - Log error: Room 2 is too hot with average temperature 20.422294°C measured by sensor 21
+151 - Tue Dec 10 23:51:31 2024 - Log error: Room 1 is too hot with average temperature 20.980178°C measured by sensor 15
+152 - Tue Dec 10 23:51:33 2024 - Sensor node 15 with value: 20.799053 is inserted correctly to the buffer.
+153 - Tue Dec 10 23:51:33 2024 - Data insertion from sensor with id 15 succeeded
+154 - Tue Dec 10 23:51:33 2024 - Data insertion from sensor with id 15 succeeded
+155 - Tue Dec 10 23:51:33 2024 - Sensor node 37 with value: 19.617636 is inserted correctly to the buffer.
+156 - Tue Dec 10 23:51:33 2024 - Log error: Room 1 is too hot with average temperature 20.966632°C measured by sensor 15
+157 - Tue Dec 10 23:51:35 2024 - Sensor node 21 with value: 20.436673 is inserted correctly to the buffer.
+158 - Tue Dec 10 23:51:35 2024 - Data insertion from sensor with id 37 succeeded
+159 - Tue Dec 10 23:51:35 2024 - Data insertion from sensor with id 21 succeeded
+160 - Tue Dec 10 23:51:35 2024 - Sensor node 15 with value: 20.862791 is inserted correctly to the buffer.
+161 - Tue Dec 10 23:51:35 2024 - Log error: Room 2 is too hot with average temperature 20.439120°C measured by sensor 21
+162 - Tue Dec 10 23:51:35 2024 - Log error: Room 1 is too hot with average temperature 20.948242°C measured by sensor 15
+163 - Tue Dec 10 23:51:37 2024 - Sensor node 15 with value: 20.676911 is inserted correctly to the buffer.
+164 - Tue Dec 10 23:51:37 2024 - Data insertion from sensor with id 15 succeeded
+165 - Tue Dec 10 23:51:37 2024 - Data insertion from sensor with id 15 succeeded
+166 - Tue Dec 10 23:51:39 2024 - Sensor node 15 with value: 20.863036 is inserted correctly to the buffer.
+167 - Tue Dec 10 23:51:39 2024 - Log error: Room 1 is too hot with average temperature 20.853856°C measured by sensor 15
+168 - Tue Dec 10 23:51:39 2024 - Log error: Room 1 is too hot with average temperature 20.808592°C measured by sensor 15
+169 - Tue Dec 10 23:51:40 2024 - Sensor node 21 with value: 20.548034 is inserted correctly to the buffer.
+170 - Tue Dec 10 23:51:40 2024 - Data insertion from sensor with id 15 succeeded
+171 - Tue Dec 10 23:51:40 2024 - Data insertion from sensor with id 21 succeeded
+172 - Tue Dec 10 23:51:41 2024 - Sensor node 15 with value: 20.821170 is inserted correctly to the buffer.
+173 - Tue Dec 10 23:51:41 2024 - Log error: Room 2 is too hot with average temperature 20.433438°C measured by sensor 21
+174 - Tue Dec 10 23:51:41 2024 - Log error: Room 1 is too hot with average temperature 20.804592°C measured by sensor 15
+175 - Tue Dec 10 23:51:43 2024 - Sensor node 15 with value: 20.898642 is inserted correctly to the buffer.
+176 - Tue Dec 10 23:51:43 2024 - Data insertion from sensor with id 15 succeeded
+177 - Tue Dec 10 23:51:43 2024 - Data insertion from sensor with id 15 succeeded
+178 - Tue Dec 10 23:51:43 2024 - Sensor node 37 with value: 19.547610 is inserted correctly to the buffer.
+179 - Tue Dec 10 23:51:43 2024 - Log error: Room 1 is too hot with average temperature 20.824510°C measured by sensor 15
+180 - Tue Dec 10 23:51:45 2024 - Sensor node 21 with value: 20.488340 is inserted correctly to the buffer.
+181 - Tue Dec 10 23:51:45 2024 - Data insertion from sensor with id 37 succeeded
+182 - Tue Dec 10 23:51:45 2024 - Data insertion from sensor with id 21 succeeded
+183 - Tue Dec 10 23:51:45 2024 - Sensor node 15 with value: 20.708287 is inserted correctly to the buffer.
+184 - Tue Dec 10 23:51:45 2024 - Log error: Room 2 is too hot with average temperature 20.456217°C measured by sensor 21
+185 - Tue Dec 10 23:51:45 2024 - Log error: Room 1 is too hot with average temperature 20.793609°C measured by sensor 15
+186 - Tue Dec 10 23:51:47 2024 - Sensor node 15 with value: 20.612935 is inserted correctly to the buffer.
+187 - Tue Dec 10 23:51:47 2024 - Data insertion from sensor with id 15 succeeded
+188 - Tue Dec 10 23:51:47 2024 - Data insertion from sensor with id 15 succeeded
+189 - Tue Dec 10 23:51:49 2024 - Sensor node 15 with value: 20.421138 is inserted correctly to the buffer.
+190 - Tue Dec 10 23:51:49 2024 - Log error: Room 1 is too hot with average temperature 20.780814°C measured by sensor 15
+191 - Tue Dec 10 23:51:49 2024 - Log error: Room 1 is too hot with average temperature 20.692435°C measured by sensor 15
+192 - Tue Dec 10 23:51:50 2024 - Sensor node 21 with value: 20.645658 is inserted correctly to the buffer.
+193 - Tue Dec 10 23:51:50 2024 - Data insertion from sensor with id 15 succeeded
+194 - Tue Dec 10 23:51:50 2024 - Data insertion from sensor with id 21 succeeded
+195 - Tue Dec 10 23:51:51 2024 - Sensor node 15 with value: 20.596926 is inserted correctly to the buffer.
+196 - Tue Dec 10 23:51:51 2024 - Log error: Room 2 is too hot with average temperature 20.528690°C measured by sensor 21
+197 - Tue Dec 10 23:51:51 2024 - Log error: Room 1 is too hot with average temperature 20.647586°C measured by sensor 15
+198 - Tue Dec 10 23:51:53 2024 - Sensor node 15 with value: 20.676854 is inserted correctly to the buffer.
+199 - Tue Dec 10 23:51:53 2024 - Data insertion from sensor with id 15 succeeded
+200 - Tue Dec 10 23:51:53 2024 - Data insertion from sensor with id 15 succeeded
+201 - Tue Dec 10 23:51:53 2024 - Sensor node 37 with value: 19.763569 is inserted correctly to the buffer.
+202 - Tue Dec 10 23:51:53 2024 - Log error: Room 1 is too hot with average temperature 20.603228°C measured by sensor 15
+203 - Tue Dec 10 23:51:55 2024 - Sensor node 37 has closed the connection.
+204 - Tue Dec 10 23:51:55 2024 - Sensor node 21 with value: 20.764041 is inserted correctly to the buffer.
+205 - Tue Dec 10 23:51:55 2024 - Data insertion from sensor with id 37 succeeded
+206 - Tue Dec 10 23:51:55 2024 - Data insertion from sensor with id 21 succeeded
+207 - Tue Dec 10 23:51:55 2024 - Sensor node 15 with value: 20.734513 is inserted correctly to the buffer.
+208 - Tue Dec 10 23:51:55 2024 - Log error: Room 2 is too hot with average temperature 20.576549°C measured by sensor 21
+209 - Tue Dec 10 23:51:55 2024 - Log error: Room 1 is too hot with average temperature 20.608473°C measured by sensor 15
+210 - Tue Dec 10 23:51:57 2024 - Sensor node 15 with value: 20.611176 is inserted correctly to the buffer.
+211 - Tue Dec 10 23:51:57 2024 - Data insertion from sensor with id 15 succeeded
+212 - Tue Dec 10 23:51:57 2024 - Data insertion from sensor with id 15 succeeded
+213 - Tue Dec 10 23:51:59 2024 - Sensor node 15 with value: 20.390101 is inserted correctly to the buffer.
+214 - Tue Dec 10 23:51:59 2024 - Log error: Room 1 is too hot with average temperature 20.608121°C measured by sensor 15
+215 - Tue Dec 10 23:51:59 2024 - Log error: Room 1 is too hot with average temperature 20.601914°C measured by sensor 15
+216 - Tue Dec 10 23:52:00 2024 - Sensor node 21 with value: 20.568601 is inserted correctly to the buffer.
+217 - Tue Dec 10 23:52:00 2024 - Data insertion from sensor with id 15 succeeded
+218 - Tue Dec 10 23:52:00 2024 - Data insertion from sensor with id 21 succeeded
+219 - Tue Dec 10 23:52:01 2024 - Sensor node 15 with value: 20.337866 is inserted correctly to the buffer.
+220 - Tue Dec 10 23:52:01 2024 - Log error: Room 2 is too hot with average temperature 20.602935°C measured by sensor 21
+221 - Tue Dec 10 23:52:01 2024 - Log error: Room 1 is too hot with average temperature 20.550102°C measured by sensor 15
+222 - Tue Dec 10 23:52:03 2024 - Sensor node 15 with value: 20.484958 is inserted correctly to the buffer.
+223 - Tue Dec 10 23:52:03 2024 - Data insertion from sensor with id 15 succeeded
+224 - Tue Dec 10 23:52:03 2024 - Data insertion from sensor with id 15 succeeded
+225 - Tue Dec 10 23:52:05 2024 - Sensor node 21 with value: 20.421011 is inserted correctly to the buffer.
+226 - Tue Dec 10 23:52:05 2024 - Log error: Room 1 is too hot with average temperature 20.511723°C measured by sensor 15
+227 - Tue Dec 10 23:52:05 2024 - Log error: Room 2 is too hot with average temperature 20.577530°C measured by sensor 21
+228 - Tue Dec 10 23:52:05 2024 - Sensor node 15 with value: 20.496734 is inserted correctly to the buffer.
+229 - Tue Dec 10 23:52:05 2024 - Data insertion from sensor with id 21 succeeded
+230 - Tue Dec 10 23:52:05 2024 - Data insertion from sensor with id 15 succeeded
+231 - Tue Dec 10 23:52:06 2024 - Sensor node 21 has closed the connection.
+232 - Tue Dec 10 23:52:07 2024 - Sensor node 15 with value: 20.713718 is inserted correctly to the buffer.
+233 - Tue Dec 10 23:52:07 2024 - Log error: Room 1 is too hot with average temperature 20.464167°C measured by sensor 15
+234 - Tue Dec 10 23:52:07 2024 - Log error: Room 1 is too hot with average temperature 20.484676°C measured by sensor 15
+235 - Tue Dec 10 23:52:09 2024 - Sensor node 15 has closed the connection.
+236 - Tue Dec 10 23:52:09 2024 - server is down normally
+237 - Tue Dec 10 23:52:09 2024 - Data insertion from sensor with id 15 succeeded
+238 - Tue Dec 10 23:52:09 2024 - DB file normally closed.

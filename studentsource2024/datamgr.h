@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "config.h"
+#include "sbuffer.h"
 
 #ifndef RUN_AVG_LENGTH
 #define RUN_AVG_LENGTH 5
@@ -24,9 +25,9 @@ typedef uint16_t room_id_t;
 
 typedef struct {
     sensor_id_t sensor_id;         /** < sensor id */
-    room_id_t room_id;  /** < sensor value */
+    room_id_t room_id;             /** < sensor value */
     int reading_count;
-    double past_readings[RUN_AVG_LENGTH];
+    double past_readings[RUN_AVG_LENGTH];   /** < circular buffer */
     double next_write_index;
     double running_avg;
     time_t last_modified;
@@ -48,8 +49,7 @@ typedef struct {
  *  \param fp_sensor_map file pointer to the map file
  *  \param fp_sensor_data file pointer to the binary data file
  */
-void datamgr_parse_sensor_files(FILE *fp_sensor_map, FILE *fp_sensor_data);
-
+void datamgr_parse_sensor_files(FILE *fp_sensor_map, sbuffer_t *sbuf);
 /**
  * This method should be called to clean up the datamgr, and to free all used memory. 
  * After this, any call to datamgr_get_room_id, datamgr_get_avg, datamgr_get_last_modified or datamgr_get_total_sensors will not return a valid result

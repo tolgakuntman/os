@@ -2,9 +2,9 @@ TITLE_COLOR = \033[33m
 NO_COLOR = \033[0m
 
 # when executing make, compile all exe's
-#all: sensor_gateway sensor_node file_creator
-all: main.c sensor_db.h sensor_db.c connmgr.h connmgr.c lib/tcpsock.c sbuffer.c sbuffer.h
-	gcc -g -Wall main.c sensor_db.c connmgr.c sbuffer.c lib/tcpsock.c -o main.out
+all: sensor_gateway sensor_node file_creator
+#all: main.c sensor_db.h sensor_db.c connmgr.h connmgr.c lib/tcpsock.c sbuffer.c sbuffer.h datamgr.c datamgr.h lib/dplist.h lib/dplist.c
+#gcc -g -Wall main.c sensor_db.c connmgr.c sbuffer.c datamgr.c lib/dplist.c lib/tcpsock.c -o main.out
 # When trying to compile one of the executables, first look for its .c files
 # Then check if the libraries are in the lib folder
 sensor_gateway : main.c connmgr.c datamgr.c sensor_db.c sbuffer.c lib/libdplist.so lib/libtcpsock.so

@@ -7,6 +7,12 @@
 
 #include <stdint.h>
 #include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stddef.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <stdbool.h>
 
 #define READ_MSG_LENGTH 100
 

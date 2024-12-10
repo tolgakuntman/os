@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "datamgr.h": "c",
+        "stdint.h": "c",
+        "dplist.h": "c",
+        "sbuffer.h": "c",
+        "connmgr.h": "c"
+    }
+}

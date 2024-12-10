@@ -65,8 +65,8 @@ void *wait_for_clients(void *arg) {
     tcpsock_t *server, *client;
     arg_t *args=arg;
     
-    PORT =args->arg1;
-    MAX_CONN =args->arg2;
+    PORT =*(int *)args->arg1;
+    MAX_CONN =*(int *)args->arg2;
     sbuffer_t *sbuf=args->arg3;
      
     pthread_t threads[MAX_CONN];
