@@ -12,5 +12,5 @@ sleep 2
 ./sensor_node 37 2 127.0.0.1 $port &
 sleep 11
 killall sensor_node
-sleep 30
+sleep 15
 killall sensor_gateway

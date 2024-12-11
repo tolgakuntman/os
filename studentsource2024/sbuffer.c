@@ -110,17 +110,19 @@ int sbuffer_remove(sbuffer_t *buffer, sensor_data_t *data, int consumer_id) {
 
     while (true) {
         sbuffer_node_t *current = buffer->head;
-
         // Traverse the buffer to find the first unaccessed node for this consumer
         while (current != NULL && current->accessed[consumer_id]) {
             current = current->next;
         }
+        
         if (current != NULL) {  //If the buffer is empty skip
             *data = current->data;
+            
             if (data->id == 0) {
                 pthread_mutex_unlock(&buffer_lock);
                 return SBUFFER_NO_DATA;
             }
+            
             current->accessed[consumer_id] = true;
             if (current->accessed[0] && current->accessed[1]) { //They both start processing from the head, 
                                                                 //if both accessed are true for a node, it'll be the head
@@ -151,7 +153,6 @@ int sbuffer_insert(sbuffer_t *buffer, sensor_data_t *data) {
     dummy->next = NULL;
     dummy->accessed[0] = false; // Assuming two consumers: Data Manager and Storage Manager
     dummy->accessed[1] = false; // Assuming two consumers: Data Manager and Storage Manager
-
     pthread_mutex_lock(&buffer_lock);
     if (buffer->tail == NULL) // buffer empty (buffer->head should also be NULL
     {

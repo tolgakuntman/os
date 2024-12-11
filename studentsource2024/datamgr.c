@@ -50,7 +50,9 @@ void add_reading(sensor_node_data_t *sensor, double value){
     int write_index=(sensor->next_write_index);
     sensor->past_readings[write_index]=value;
     sensor->next_write_index=(write_index+1)%RUN_AVG_LENGTH;
-    sensor->reading_count= sensor->reading_count < RUN_AVG_LENGTH ? ++sensor->reading_count : sensor->reading_count;
+    if (sensor->reading_count < RUN_AVG_LENGTH) {
+    sensor->reading_count++;
+    }
 }
 
 
@@ -84,12 +86,13 @@ void datamgr_parse_sensor_files(FILE *fp_sensor_map, sbuffer_t *sbuf) {
         // printf("%hd %hd\n", sensor_input->sensor_id,sensor_input->room_id);
     }
     sensor_value_t temperature;
-    sensor_ts_t timestamp;
+    //sensor_ts_t timestamp;
     sensor_node_data_t temp_sensor;
     sensor_data_t data;
     while (sbuffer_remove(sbuf,&data,0)!=SBUFFER_NO_DATA) {
         temp_sensor.sensor_id=data.id;
         temperature=data.value;
+        //timestamp=data.ts;
         int index = dpl_get_index_of_element(list, &temp_sensor);
         if(index==-1)  {
             char error_msg[READ_MSG_LENGTH] = {[0 ... READ_MSG_LENGTH-1] = '\0'};
@@ -117,7 +120,7 @@ void datamgr_parse_sensor_files(FILE *fp_sensor_map, sbuffer_t *sbuf) {
             }
         }
         
-        // printf("%i,%li,%f,%i,%f\n",sensor_id,timestamp,temperature,sensor->reading_count,sensor->running_avg);
+        // printf("%i,%i,%f,%i,%f\n",sensor_id,0,temperature,sensor->reading_count,sensor->running_avg);
     }
 
 }
@@ -137,15 +140,16 @@ void datamgr_free() {
  * \return the corresponding room id
  */
 uint16_t datamgr_get_room_id(sensor_id_t sensor_id) {
-    sensor_node_data_t *temp_sensor;
-    temp_sensor->sensor_id = sensor_id;
-    int index = dpl_get_index_of_element(list, temp_sensor);
-    if(index==-1) {
-        ERROR_HANDLER(true,"room_id couldn't be found!!!!!!!!");
+    sensor_node_data_t temp_sensor;
+    temp_sensor.sensor_id = sensor_id;
+    int index = dpl_get_index_of_element(list, &temp_sensor);
+    if (index == -1) {
+        ERROR_HANDLER(true, "room_id couldn't be found!!!!!!!!");
     }
-    temp_sensor = (sensor_node_data_t *)dpl_get_element_at_index(list, index);
-    return temp_sensor->room_id;
+    sensor_node_data_t *retrieved_sensor = (sensor_node_data_t *)dpl_get_element_at_index(list, index);
+    return retrieved_sensor->room_id;
 }
+
 
 /**
  * Gets the running AVG of a certain sensor ID (if less then RUN_AVG_LENGTH measurements are recorded the avg is 0)
@@ -154,15 +158,16 @@ uint16_t datamgr_get_room_id(sensor_id_t sensor_id) {
  * \return the running AVG of the given sensor
  */
 sensor_value_t datamgr_get_avg(sensor_id_t sensor_id) {
-    sensor_node_data_t *temp_sensor;
-    temp_sensor->sensor_id = sensor_id;
-    int index = dpl_get_index_of_element(list, temp_sensor);
-    if(index==-1) {
-        ERROR_HANDLER(true,"sensor_id couldn't be found for running avg search!!!!!!!!");
+    sensor_node_data_t temp_sensor;
+    temp_sensor.sensor_id = sensor_id;
+    int index = dpl_get_index_of_element(list, &temp_sensor);
+    if (index == -1) {
+        ERROR_HANDLER(true, "sensor_id couldn't be found for running avg search!!!!!!!!");
     }
-    temp_sensor = (sensor_node_data_t *)dpl_get_element_at_index(list, index);
-    return temp_sensor->running_avg;
+    sensor_node_data_t *retrieved_sensor = (sensor_node_data_t *)dpl_get_element_at_index(list, index);
+    return retrieved_sensor->running_avg;
 }
+
 
 /**
  * Returns the time of the last reading for a certain sensor ID
@@ -171,15 +176,16 @@ sensor_value_t datamgr_get_avg(sensor_id_t sensor_id) {
  * \return the last modified timestamp for the given sensor
  */
 time_t datamgr_get_last_modified(sensor_id_t sensor_id) {
-    sensor_node_data_t *temp_sensor;
-    temp_sensor->sensor_id = sensor_id;
-    int index = dpl_get_index_of_element(list, temp_sensor);
-    if(index==-1) {
-        ERROR_HANDLER(true,"sensor_id couldn't be found for last modified search!!!!!!!!");
+    sensor_node_data_t temp_sensor;
+    temp_sensor.sensor_id = sensor_id;
+    int index = dpl_get_index_of_element(list, &temp_sensor); 
+    if (index == -1) {
+        ERROR_HANDLER(true, "sensor_id couldn't be found for last modified search!!!!!!!!");
     }
-    temp_sensor = (sensor_node_data_t *)dpl_get_element_at_index(list, index);
-    return temp_sensor->last_modified;
+    sensor_node_data_t *retrieved_sensor = (sensor_node_data_t *)dpl_get_element_at_index(list, index);
+    return retrieved_sensor->last_modified;
 }
+
 
 /**
  * Return the total amount of unique sensor ID's recorded by the datamgr

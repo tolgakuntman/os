@@ -68,7 +68,6 @@ void *wait_for_clients(void *arg) {
     PORT =*(int *)args->arg1;
     MAX_CONN =*(int *)args->arg2;
     sbuffer_t *sbuf=args->arg3;
-     
     pthread_t threads[MAX_CONN];
     write_to_log_process("Listening for clients.");
     if (tcp_passive_open(&server, PORT) != TCP_NO_ERROR){

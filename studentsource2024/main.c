@@ -111,7 +111,6 @@ void *storage_manager(void *args){
 void *data_manager(void *args){
     sbuffer_t *sbuf=((sbuffer_t *)args);
     FILE *map = fopen("room_sensor.map", "r");
-
     datamgr_parse_sensor_files(map, sbuf);
     fclose(map);
     datamgr_free();
@@ -120,13 +119,13 @@ void *data_manager(void *args){
 
 int main(int argc, char *argv[])
 {
-    sbuffer_t *sbuf;
     create_log_process();
     if(argc < 3) {
     	write_to_log_process("Please provide correct and enough arguments");
         end_log_process();
     	return -1;
     }
+    sbuffer_t *sbuf;
     sbuffer_init(&sbuf);
     pthread_t connmgr_thread;
     arg_t *arg_connmng=(arg_t *)malloc(sizeof(arg_t));
@@ -134,7 +133,7 @@ int main(int argc, char *argv[])
     int MAX_CONN=atoi(argv[2]);
     arg_connmng->arg1=&PORT;//PORT
     arg_connmng->arg2=&MAX_CONN;//MAX_CONN
-    arg_connmng->arg3=&sbuf;
+    arg_connmng->arg3=sbuf;
     pthread_create(&connmgr_thread,NULL,&connmgr,arg_connmng);
 
     pthread_t storage_manager_thread;
@@ -146,6 +145,8 @@ int main(int argc, char *argv[])
     pthread_join(connmgr_thread,NULL);
     pthread_join(storage_manager_thread,NULL);
     pthread_join(data_manager_thread,NULL);
+    printf("threads done\n");
+    fflush(stdout);
     sbuffer_free(&sbuf);
     free(arg_connmng);
     end_log_process();
