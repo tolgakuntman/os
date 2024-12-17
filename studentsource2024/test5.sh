@@ -14,7 +14,7 @@ echo -e 'starting 5 sensor nodes'
 ./sensor_node 132 4 127.0.0.1 $port &
 
 ./sensor_node 142 11 127.0.0.1 $port &
-sleep 100
+sleep 10
 killall sensor_node
 sleep 1
 killall sensor_gateway
