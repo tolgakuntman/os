@@ -1,10 +1,8 @@
 #include "config.h"
 #include "sbuffer.h"
-
 #include "connmgr.h"
 #include "datamgr.h"
 #include "sensor_db.h"
-
 #include "pthread.h"
 
 #define FORMATTED_TIME_LENGTH 50
@@ -118,7 +116,8 @@ void *data_manager(void *args){
 }
 
 int main(int argc, char *argv[])
-{
+{   
+    printf("sensor gateaway started.\n");
     create_log_process();
     if(argc < 3) {
     	write_to_log_process("Please provide correct and enough arguments");
@@ -150,5 +149,6 @@ int main(int argc, char *argv[])
     sbuffer_free(&sbuf);
     free(arg_connmng);
     end_log_process();
+    printf("sensor gateaway finished.\n");
     return 0;
 }

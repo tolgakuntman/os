@@ -1,5 +1,5 @@
 /**
- * \author Bert Lagaisse
+ * \author Tolga Kuntman
  */
 
 #ifndef _SENSOR_DB_H_

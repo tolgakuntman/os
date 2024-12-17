@@ -1,5 +1,5 @@
 /**
- * \author {AUTHOR}
+ * \author Tolga Kuntman
  */
 
 #ifndef DATAMGR_H_
@@ -14,13 +14,6 @@
 #define RUN_AVG_LENGTH 5
 #endif
 
-#ifndef SET_MAX_TEMP
-#define SET_MAX_TEMP 20
-#endif
-
-#ifndef SET_MIN_TEMP
-#define SET_MIN_TEMP 10
-#endif
 typedef uint16_t room_id_t;
 
 typedef struct {

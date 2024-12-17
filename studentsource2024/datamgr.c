@@ -96,7 +96,7 @@ void datamgr_parse_sensor_files(FILE *fp_sensor_map, sbuffer_t *sbuf) {
         int index = dpl_get_index_of_element(list, &temp_sensor);
         if(index==-1)  {
             char error_msg[READ_MSG_LENGTH] = {[0 ... READ_MSG_LENGTH-1] = '\0'};
-            sprintf(error_msg,"Log error: Sensor read has an invalid id %hd",
+            sprintf(error_msg,"Error: Sensor read has an invalid id %hd",
             temp_sensor.sensor_id);
             write_to_log_process(error_msg);
             continue;
@@ -107,14 +107,14 @@ void datamgr_parse_sensor_files(FILE *fp_sensor_map, sbuffer_t *sbuf) {
             sensor->running_avg=0;
             for(int j = 0; j < sensor->reading_count; j++) sensor->running_avg += sensor->past_readings[j]/(sensor->reading_count);
             if (sensor->running_avg < SET_MIN_TEMP) {
-               fprintf(stderr, "Log error: Room %hd is too cold with average temperature %f°C measured by sensor %hd", sensor->room_id, sensor->running_avg,sensor->sensor_id);
+               //fprintf(stderr, "Log error: Room %hd is too cold with average temperature %f°C measured by sensor %hd", sensor->room_id, sensor->running_avg,sensor->sensor_id);
                char error_msg[READ_MSG_LENGTH] = {[0 ... READ_MSG_LENGTH-1] = '\0'};
-                sprintf(error_msg,"Log error: Room %hd is too cold with average temperature %f°C measured by sensor %hd", 
+                sprintf(error_msg,"Error: Room %hd is too cold with average temperature %f°C measured by sensor %hd", 
                 sensor->room_id, sensor->running_avg,sensor->sensor_id);
                 write_to_log_process(error_msg);
             } else if (sensor->running_avg > SET_MAX_TEMP) {
                 char error_msg[READ_MSG_LENGTH] = {[0 ... READ_MSG_LENGTH-1] = '\0'};
-                sprintf(error_msg,"Log error: Room %hd is too hot with average temperature %f°C measured by sensor %hd", 
+                sprintf(error_msg,"Error: Room %hd is too hot with average temperature %f°C measured by sensor %hd", 
                 sensor->room_id, sensor->running_avg,sensor->sensor_id);
                 write_to_log_process(error_msg);
             }

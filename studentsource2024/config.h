@@ -1,5 +1,5 @@
 /**
- * \author {AUTHOR}
+ * \author Tolga Kuntman
  */
 
 #ifndef _CONFIG_H_
@@ -14,12 +14,27 @@
 #include <sys/wait.h>
 #include <stdbool.h>
 
+#ifndef TIMEOUT
+#define TIMEOUT 5
+#endif
+
+#ifndef SET_MAX_TEMP
+#define SET_MAX_TEMP 20
+#endif
+
+#ifndef SET_MIN_TEMP
+#define SET_MIN_TEMP 10
+#endif
+
 #define READ_MSG_LENGTH 100
 
 typedef uint16_t sensor_id_t;
 typedef double sensor_value_t;
 typedef time_t sensor_ts_t;         // UTC timestamp as returned by time() - notice that the size of time_t is different on 32/64 bit machine
 
+/** Writes to a pipe that's been read by a logger child process
+ * \return returns 0 if the it's written sucessfully to the pipe, and -1 otherwise if an error occurred.
+ */
 int write_to_log_process(char *msg);
 
 /** Creates child log process and set up a communication pipe to receive data from parent process.

@@ -1,3 +1,7 @@
+/**
+ * \author Tolga Kuntman
+ */
+
 #include "sensor_db.h"
 
 bool is_file_open=false;
@@ -10,7 +14,7 @@ FILE * open_db(char * filename, bool append){
         write_to_log_process("DB file failed to open.");
         return NULL;
     }
-    write_to_log_process("A new csv file is created or an existing file has been opened.");
+    write_to_log_process("A new csv file is created or an existing file has been opened for the DB.");
     is_file_open=true;
     return file;
 }

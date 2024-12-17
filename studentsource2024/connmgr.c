@@ -31,7 +31,7 @@ void *listen_the_client(void *arg){
     do {
         // read sensor ID
         bytes = sizeof(data.id);
-        result = tcp_receive(client, (void *) &data.id, &bytes);
+        result = tcp_receive(client, (void *) &data.id, &bytes,TIMEOUT);
         if(first_data&&result==TCP_NO_ERROR){
             id = data.id;
             char con_msg[READ_MSG_LENGTH] = {[0 ... READ_MSG_LENGTH-1] = '\0'};
@@ -39,23 +39,36 @@ void *listen_the_client(void *arg){
             write_to_log_process(con_msg);
             first_data = 0;
         }
+        if(result!=TCP_NO_ERROR){
+            break;
+        }
         // read temperature
         bytes = sizeof(data.value);
-        result = tcp_receive(client, (void *) &data.value, &bytes);
+        result = tcp_receive(client, (void *) &data.value, &bytes,TIMEOUT);
+        if(result!=TCP_NO_ERROR){
+            break;
+        }
         // read timestamp
         bytes = sizeof(data.ts);
-        result = tcp_receive(client, (void *) &data.ts, &bytes);
+        result = tcp_receive(client, (void *) &data.ts, &bytes,TIMEOUT);
+        if(result!=TCP_NO_ERROR){
+            break;
+        }
         if ((result == TCP_NO_ERROR) && bytes==sizeof(data.ts)) {
-             printf("sensor id = %" PRIu16 " - temperature = %g - timestamp = %ld\n", data.id, data.value,
-                    (long int) data.ts);
+             //printf("sensor id = %" PRIu16 " - temperature = %g - timestamp = %ld\n", data.id, data.value,
+               //     (long int) data.ts);
             char inserted_msg[READ_MSG_LENGTH] = {[0 ... READ_MSG_LENGTH-1] = '\0'};
             sprintf(inserted_msg, "Sensor node %hu with value: %f is inserted correctly to the buffer.", data.id, data.value);
             write_to_log_process(inserted_msg);
             sbuffer_insert(sbuf, &data);
         }
-    } while (result == TCP_NO_ERROR);
+    } while (true);
     char disconnect_msg[READ_MSG_LENGTH] = {[0 ... READ_MSG_LENGTH-1] = '\0'};
+    if(result==TCP_TIMEOUT){
+        sprintf(disconnect_msg, "Sensor node %hu timed out.", id); 
+    }else{
     sprintf(disconnect_msg, "Sensor node %hu has closed the connection.", id);
+    }
     write_to_log_process(disconnect_msg);
     tcp_close(&client);
     printf("Thread exiting after serving a client.\n");
@@ -78,15 +91,14 @@ void *wait_for_clients(void *arg) {
         if (tcp_wait_for_connection(server, &client) != TCP_NO_ERROR) {
                 write_to_log_process("Failed to put the socket 'socket' in a blocking wait mode");
                 exit(EXIT_FAILURE);
-            }
-         else {
+        }else {
                 //printf("Client connecting...\n");
                 arg_t *args_client=(arg_t *)malloc(sizeof(arg_t));
                 args_client->arg1=client;
                 args_client->arg2=sbuf;
                 pthread_create(&threads[conn_counter], NULL, &listen_the_client, args_client);
                 conn_counter++;
-            }
+        }
     }while(conn_counter<MAX_CONN);
     write_to_log_process("Max number of clients joined, waiting for them to disconnect");
     for(int i=0;i<MAX_CONN;i++){

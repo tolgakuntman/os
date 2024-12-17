@@ -101,8 +101,10 @@ int main(int argc, char *argv[]) {
         bytes = sizeof(data.value);
         if (tcp_send(client, (void *) &data.value, &bytes) != TCP_NO_ERROR) exit(EXIT_FAILURE);
         bytes = sizeof(data.ts);
+       //printf("id:%d, value:%f\n",data.id,data.value);
         if (tcp_send(client, (void *) &data.ts, &bytes) != TCP_NO_ERROR) exit(EXIT_FAILURE);
         LOG_PRINTF(data.id, data.value, data.ts);
+        //usleep(1000*sleep_time);
         sleep(sleep_time);
         UPDATE(i);
     }

@@ -200,7 +200,7 @@ int tcp_send(tcpsock_t *socket, void *buffer, int *buf_size) {
     return TCP_NO_ERROR;
 }
 
-int tcp_receive(tcpsock_t *socket, void *buffer, int *buf_size) {
+int tcp_receive(tcpsock_t *socket, void *buffer, int *buf_size,int timeout_sec) {
     TCP_ERR_HANDLER(socket == NULL, return TCP_SOCKET_ERROR);
     TCP_ERR_HANDLER(socket->cookie != MAGIC_COOKIE, return TCP_SOCKET_ERROR);
     if ((buffer == NULL) || (buf_size == 0))  //nothing to read
@@ -208,10 +208,19 @@ int tcp_receive(tcpsock_t *socket, void *buffer, int *buf_size) {
         *buf_size = 0;
         return TCP_NO_ERROR;
     }
+    struct timeval timeout;
+    timeout.tv_sec = timeout_sec;      // Timeout in seconds
+    timeout.tv_usec = 0;               // Timeout in microseconds
+    if (setsockopt(socket->sd, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout)) < 0) {
+        TCP_DEBUG_PRINTF(1, "setsockopt() failed with errno = %d [%s]", errno, strerror(errno));
+        return TCP_SOCKOP_ERROR;
+    }
     *buf_size = recv(socket->sd, buffer, *buf_size, 0);
     TCP_DEBUG_PRINTF(*buf_size == 0, "Recv() : no connection to peer\n");
     TCP_ERR_HANDLER(*buf_size == 0, return TCP_CONNECTION_CLOSED);
     TCP_DEBUG_PRINTF((*buf_size < 0) && (errno == ENOTCONN), "Recv() : no connection to peer\n");
+    TCP_ERR_HANDLER((*buf_size < 0) && (errno == EWOULDBLOCK || errno == EAGAIN), return TCP_TIMEOUT);
+    TCP_DEBUG_PRINTF(*buf_size < 0, "Recv() timed out with errno = %d [%s]", errno, strerror(errno));
     TCP_ERR_HANDLER((*buf_size < 0) && (errno == ENOTCONN), return TCP_CONNECTION_CLOSED);
     TCP_DEBUG_PRINTF(*buf_size < 0, "Recv() failed with errno = %d [%s]", errno, strerror(errno));
     TCP_ERR_HANDLER(*buf_size < 0, return TCP_SOCKOP_ERROR);

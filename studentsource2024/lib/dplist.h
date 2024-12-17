@@ -1,5 +1,5 @@
 /**
- * \author {AUTHOR}
+ * \author Tolga Kuntman
  */
 
 #ifndef _DPLIST_H_

@@ -56,53 +56,7 @@ int sbuffer_free(sbuffer_t **buffer) {
     pthread_mutex_destroy(&buffer_lock);
     return SBUFFER_SUCCESS;
 }
-// int sbuffer_remove(sbuffer_t *buffer, sensor_data_t *data, int consumer_id) {
-//     if (buffer == NULL || (consumer_id != 0 && consumer_id != 1)) return SBUFFER_FAILURE;
 
-//     pthread_mutex_lock(&buffer_lock);
-
-//     while (buffer->head == NULL) { // Wait for data if buffer is empty
-//         pthread_cond_wait(&data_available, &buffer_lock);
-//     }
-
-//     sbuffer_node_t *current = buffer->head;
-//     sbuffer_node_t *previous = NULL;
-
-//     // Traverse the buffer to find the first unprocessed node for this consumer
-//     while (current != NULL && current->accessed[consumer_id]) {
-//         previous = current;
-//         current = current->next;
-//     }
-
-//     if (current == NULL) { // No available data for this consumer
-//         pthread_mutex_unlock(&buffer_lock);
-//         return SBUFFER_NO_DATA;
-//     }
-
-//     // Copy the data to the output
-//     *data = current->data;
-
-//     // Check for EOF and handle shutdown signal
-//     if (data->id == 0) {
-//         pthread_mutex_unlock(&buffer_lock);
-//         return SBUFFER_NO_DATA;
-//     }
-
-//     // Mark this node as accessed by the current consumer
-//     current->accessed[consumer_id] = true;
-//     if (current->accessed[0] && current->accessed[1]) {
-//     if (buffer->head == buffer->tail) // buffer has only one node
-//     {
-//         buffer->head = buffer->tail = NULL;
-//     } else  // buffer has many nodes empty
-//     {
-//         buffer->head = buffer->head->next;
-//     }
-//     }
-//     free(dummy);
-//     pthread_mutex_unlock(&buffer_lock);
-//     return SBUFFER_SUCCESS;
-// }
 int sbuffer_remove(sbuffer_t *buffer, sensor_data_t *data, int consumer_id) {
     if (buffer == NULL || (consumer_id != 0 && consumer_id != 1)) return SBUFFER_FAILURE;
 
@@ -142,7 +96,6 @@ int sbuffer_remove(sbuffer_t *buffer, sensor_data_t *data, int consumer_id) {
         pthread_cond_wait(&data_available, &buffer_lock);
     }
 }
-
 
 int sbuffer_insert(sbuffer_t *buffer, sensor_data_t *data) {
     sbuffer_node_t *dummy;
