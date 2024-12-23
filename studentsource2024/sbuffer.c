@@ -1,5 +1,5 @@
 /**
- * \author {AUTHOR}
+ * \author Tolga Kuntman
  */
 
 #include <stdlib.h>

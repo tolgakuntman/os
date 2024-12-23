@@ -104,7 +104,7 @@ int main(int argc, char *argv[]) {
        //printf("id:%d, value:%f\n",data.id,data.value);
         if (tcp_send(client, (void *) &data.ts, &bytes) != TCP_NO_ERROR) exit(EXIT_FAILURE);
         LOG_PRINTF(data.id, data.value, data.ts);
-        //usleep(1000*sleep_time);
+        // usleep(1000*sleep_time);
         sleep(sleep_time);
         UPDATE(i);
     }
